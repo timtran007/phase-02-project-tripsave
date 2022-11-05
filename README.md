@@ -51,5 +51,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+## Credit
+Thank you to the team at Planetware.com for the images used for our db.json file.
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
