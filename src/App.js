@@ -2,7 +2,7 @@
 function App() {
   return (
     <div>
-      
+      <Nav />
     </div>
   );
 }
