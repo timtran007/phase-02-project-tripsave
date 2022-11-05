@@ -8,10 +8,19 @@ function Nav(){
                 <NavLink to="/">
                     Home
                 </NavLink>
+            </div>
+            <div>
                 <NavLink to="/destination">
                     Trips
+                </NavLink>
+            </div>
+            <div>    
+                <NavLink to="add-a-trip">
+                    Add a Trip
                 </NavLink>
             </div>
         </div>
     )
 }
+
+export default Nav
