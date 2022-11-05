@@ -34,6 +34,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### `json-server -p 3500 --watch ./src/data/db.json`
+
+Runs the server.\
+Open [http://localhost:3500/destination](http://localhost:3500/destination) to view the server in your browser.
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

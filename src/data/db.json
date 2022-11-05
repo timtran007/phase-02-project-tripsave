@@ -9,16 +9,16 @@
         },
         {
             "id": 2,
-            "name": "Bora Bora",
-            "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-bora-bora-french-polynesia.jpg",
-            "budget": 5000,
+            "name": "Machu Picchu",
+            "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-machu-picchu-peru.jpg",
+            "budget": 1000,
             "savings": 0
         },
         {
-            "id": 2,
-            "name": "Bora Bora",
-            "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-bora-bora-french-polynesia.jpg",
-            "budget": 5000,
+            "id": 3,
+            "name": "Santorini",
+            "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-santorini-greece.jpg",
+            "budget": 4000,
             "savings": 0
         }
     ]
