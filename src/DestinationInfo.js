@@ -1,5 +1,5 @@
 
-function DestionationInfo(){
+function DestionationInfo({tripData}){
     return(
         <div>
 

@@ -8,8 +8,8 @@ function DestinationContainer(){
 
     return(
         <div>
-            <DestinationImage tripData={data}/>
-            <DestinationInfo tripData={data}/>
+            <DestinationImage tripData={data.destination}/>
+            <DestinationInfo tripData={data.destination}/>
         </div>
     )
 }
