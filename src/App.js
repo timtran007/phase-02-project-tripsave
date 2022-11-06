@@ -11,7 +11,7 @@ function App() {
     budget: 0,
     savings: 0,
   })
-  
+
   return (
     <div>
       <div>
@@ -28,7 +28,7 @@ function App() {
           <DestinationContainer />
         </Route>
         <Route path="/add-a-trip">
-          <Form />
+          <Form formData={formData}/>
         </Route>
       </Switch>
     </div>

@@ -1,5 +1,5 @@
 
-function Form(){
+function Form({formData}){
     function handleFormData(event){
         console.log(event.target.value)
     }
