@@ -1,27 +1,39 @@
+import React, {useState} from "react"
 import AddFundsButton from "./AddFundsButton"
+import db from "../src/data/db.json"
 
-function DestionationInfo({tripData}){
-    const infoToDisplay = tripData.map(data =>{
+function DestionationInfo(){
+    const [tripData, setTripData] = useState(db.destination)
+    
+    function onAddFunds(updatedTripData){
+        const updatedTripsData = tripData.map(trip => {
+            if(trip.id === updatedTripData.id){
+                return updatedTripData
+            } else{
+                return tripData
+            }
+        })
+        setTripData(updatedTripsData)
+    }
+
+    const infoToDisplay = tripData.map(trip =>{
         return(
-            <div key={data.id}>
+            <div key={trip.id} id={trip.id}>
                 <h3>
-                    Destination: {data.destinationName}
+                    Destination: {trip.destinationName}
                 </h3>
-                <img src={data.imgURL} alt={data.destinationName}/>
+                <img src={trip.imgURL} alt={trip.destinationName}/>
                 <h4>
-                    Budget: ${data.budget}
+                    Budget: ${trip.budget}
                 </h4>
-                {data.savings === 0 ? 
-                    `Let's start saving for ${data.destinationName}!`
+                {trip.savings === 0 ? 
+                    `Let's start saving for ${trip.destinationName}!`
                     :
                     <h4>
-                        Savings: ${data.savings}
+                        Savings: ${trip.savings}
                     </h4>
                 }
-                <div>
-                    <AddFundsButton data={data}/>
-                </div>
-
+                    <AddFundsButton trip={trip} onAddFunds={onAddFunds}/>
             </div>
         )
     })
