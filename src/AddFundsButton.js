@@ -1,10 +1,16 @@
+import React, {useState} from "react"
 
-function AddFundsButton(){
+function AddFundsButton({tripData, setTripData}){
+
     const valueOfFundsAdded = [5, 10, 25, 50]
+    function handleClick(event){
+        console.log(event.target.value)
+    }
+
+
     const buttonsToDisplay = valueOfFundsAdded.map((value, index) =>{
         return(
-            
-            <button key={index}>
+            <button onClick={handleClick} key={index} value={value}>
                 ${value}
             </button>
         )
