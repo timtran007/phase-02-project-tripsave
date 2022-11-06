@@ -1,6 +1,6 @@
 import AddFundsButton from "./AddFundsButton"
 
-function DestionationInfo({tripData}){
+function DestionationInfo({tripData, setTripData}){
     const infoToDisplay = tripData.map(data =>{
         return(
             <div key={data.id}>
@@ -11,11 +11,15 @@ function DestionationInfo({tripData}){
                 <h4>
                     Budget: ${data.budget}
                 </h4>
-                {data.savings === 0 ? `Let's start saving for ${data.destinationName}!`:<h4>
-                    Savings: ${data.savings}
-                </h4>}
+                {data.savings === 0 ? 
+                    `Let's start saving for ${data.destinationName}!`
+                    :
+                    <h4>
+                        Savings: ${data.savings}
+                    </h4>
+                }
                 <div>
-                    <AddFundsButton />
+                    <AddFundsButton tripData={tripData}/>
                 </div>
 
             </div>
