@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/">
           <header>
             <h1> Welcome to TripSave</h1>
-            <p>Start Planning Your Dream Trip</p>
+            <p>Start Planning My Dream Trip</p>
           </header>
         </Route>
         <Route path="/destination">
