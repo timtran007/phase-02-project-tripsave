@@ -1,25 +1,25 @@
 {
-    "destination":[
-        {
-            "id": 1,
-            "destinationName": "The Maldives",
-            "imgURL": "https://www.planetware.com/wpimages/2022/02/top-rated-bucket-list-destinations-the-maldives.jpg",
-            "budget": 3000,
-            "savings": 0
-        },
-        {
-            "id": 2,
-            "destinationName": "Machu Picchu",
-            "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-machu-picchu-peru.jpg",
-            "budget": 1000,
-            "savings": 0
-        },
-        {
-            "id": 3,
-            "destinationName": "Santorini",
-            "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-santorini-greece.jpg",
-            "budget": 4000,
-            "savings": 0
-        }
-    ]
+  "destination": [
+    {
+      "id": 1,
+      "destinationName": "The Maldives",
+      "imgURL": "https://www.planetware.com/wpimages/2022/02/top-rated-bucket-list-destinations-the-maldives.jpg",
+      "budget": 3000,
+      "savings": 0
+    },
+    {
+      "id": 2,
+      "destinationName": "Machu Picchu",
+      "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-machu-picchu-peru.jpg",
+      "budget": 1000,
+      "savings": 0
+    },
+    {
+      "id": 3,
+      "destinationName": "Santorini",
+      "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-santorini-greece.jpg",
+      "budget": 4000,
+      "savings": 0
+    }
+  ]
 }

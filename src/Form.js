@@ -1,5 +1,12 @@
+import React, {useState} from "react"
+function Form(){
+    const [formData, setFormData] = useState({
+        destinationName: "",
+        imgURL: "",
+        budget: 0,
+        savings: 0,
+      })
 
-function Form({formData, setFormData}){
     function handleFormData(event){
         const key = event.target.id
         const value = event.target.value
@@ -8,11 +15,30 @@ function Form({formData, setFormData}){
             [key]: value
         })
     }
-    console.log(formData)
+
+    function handleSubmit(event){
+        event.preventDefault()
+        console.log(formData)
+        fetch('http://localhost:3500/destination',{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData),
+        })
+        setFormData({
+            destinationName: "",
+            imgURL: "",
+            budget: 0,
+            savings: 0,
+        })
+    }
+
+
     return(
         <div>
             <div><h2>Add My Dream Trip</h2></div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <p>
                     <label htmlFor="destination">Destination's Name:  </label>
                         <input 

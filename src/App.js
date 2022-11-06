@@ -1,18 +1,9 @@
-import React, {useState} from "react"
 import {Route,Switch} from "react-router-dom"
 import Nav from "./Nav"
 import DestinationContainer from "./DestinationContainer";
 import Form from "./Form";
 
 function App() {
-  const [formData, setFormData] = useState({
-    destinationName: "",
-    imgURL: "",
-    budget: 0,
-    savings: 0,
-  })
-
-
   return (
     <div>
       <div>
@@ -29,7 +20,7 @@ function App() {
           <DestinationContainer />
         </Route>
         <Route path="/add-a-trip">
-          <Form formData={formData} setFormData={setFormData}/>
+          <Form />
         </Route>
       </Switch>
     </div>
