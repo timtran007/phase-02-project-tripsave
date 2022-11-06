@@ -10,7 +10,7 @@ function DestionationInfo(){
             if(trip.id === updatedTripData.id){
                 return updatedTripData
             } else{
-                return tripData
+                return trip
             }
         })
         setTripData(updatedTripsData)
