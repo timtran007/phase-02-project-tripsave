@@ -1,13 +1,24 @@
 import React, {useState} from "react"
 
-function AddFundsButton({data}){
-    
-
+function AddFundsButton({trip, onAddFunds}){
     const valueOfFundsAdded = [5, 10, 25, 50]
+    
     function handleClick(event){
-        console.log(event.target.value)
+        const eventId = event.target.parentElement.parentElement.id
+        if(trip.id === parseInt(eventId)){
+            fetch(`http://localhost:3500/destination/${trip.id}`,{
+                method: 'PATCH',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    savings: parseInt(trip.savings + parseInt(event.target.value, 10), 10)
+                })
+            })
+            .then(resp => resp.json())
+            .then(updatedTripData => onAddFunds(updatedTripData)) 
+        }
     }
-
 
     const buttonsToDisplay = valueOfFundsAdded.map((value, index) =>{
         return(
@@ -16,6 +27,8 @@ function AddFundsButton({data}){
             </button>
         )
     })
+    
+
     return(
         <div>
             <h4>Let's Add Some Funds!</h4>
