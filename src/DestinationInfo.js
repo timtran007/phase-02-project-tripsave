@@ -1,6 +1,6 @@
 import AddFundsButton from "./AddFundsButton"
 
-function DestionationInfo({tripData, setTripData}){
+function DestionationInfo({tripData}){
     const infoToDisplay = tripData.map(data =>{
         return(
             <div key={data.id}>
@@ -19,7 +19,7 @@ function DestionationInfo({tripData, setTripData}){
                     </h4>
                 }
                 <div>
-                    <AddFundsButton tripData={tripData}/>
+                    <AddFundsButton data={data}/>
                 </div>
 
             </div>

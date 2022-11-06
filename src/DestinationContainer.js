@@ -8,7 +8,7 @@ function DestinationContainer(){
     return(
         <div>
             <h2>My Trips</h2>
-            <DestinationInfo tripData={data} setTripData={setData}/>
+            <DestinationInfo tripData={data}/>
         </div>
     )
 }

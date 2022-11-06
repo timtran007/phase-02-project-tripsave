@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 
-function AddFundsButton({tripData, setTripData}){
+function AddFundsButton({data}){
+    
 
     const valueOfFundsAdded = [5, 10, 25, 50]
     function handleClick(event){
