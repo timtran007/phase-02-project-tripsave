@@ -6,11 +6,12 @@ import Form from "./Form";
 
 function App() {
   const [formData, setFormData] = useState({
-    name: "",
-    imgUrl: "",
+    destinationName: "",
+    imgURL: "",
     budget: 0,
     savings: 0,
   })
+
 
   return (
     <div>
@@ -28,7 +29,7 @@ function App() {
           <DestinationContainer />
         </Route>
         <Route path="/add-a-trip">
-          <Form formData={formData}/>
+          <Form formData={formData} setFormData={setFormData}/>
         </Route>
       </Switch>
     </div>

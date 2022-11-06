@@ -1,19 +1,25 @@
 
-function Form({formData}){
+function Form({formData, setFormData}){
     function handleFormData(event){
-        console.log(formData)
-        console.log(event.target.value)
+        const key = event.target.id
+        const value = event.target.value
+        setFormData({
+            ...formData,
+            [key]: value
+        })
     }
+    console.log(formData)
     return(
         <div>
             <div><h2>Add My Dream Trip</h2></div>
             <form>
                 <p>
-                    <label htmlFor="destination">Destination:  </label>
+                    <label htmlFor="destination">Destination's Name:  </label>
                         <input 
                             onChange={handleFormData} 
                             type="text" 
-                            name="destination" 
+                            id="destinationName"
+                            value={formData.destinationName}
                             placeholder="enter a destination"
                         />
                 </p>
@@ -21,7 +27,9 @@ function Form({formData}){
                     <label htmlFor="imageURL">Image URL:  </label>
                         <input 
                             onChange={handleFormData} 
-                            type="text" name="imageURL" 
+                            type="text" 
+                            id="imgURL"
+                            value={formData.imgURL}
                             placeholder="add a image URL link"
                         />
                 </p>
@@ -29,8 +37,9 @@ function Form({formData}){
                     <label htmlFor="budget">Budget:  </label>
                         <input 
                             onChange={handleFormData} 
-                            type="number" 
-                            name="budget" 
+                            type="number"
+                            id="budget" 
+                            value={formData.budget}
                             placeholder="enter a budget"
                         />
                 </p> 
@@ -39,7 +48,8 @@ function Form({formData}){
                         <input 
                             onChange={handleFormData} 
                             type="number" 
-                            name="savings"
+                            id="savings"
+                            value={formData.savings}
                             placeholder="enter savings amount"
                         />
                 </p>
