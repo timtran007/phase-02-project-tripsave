@@ -1,5 +1,4 @@
 import React, {useState} from "react"
-import DestinationImage from "./DestinationImage"
 import DestinationInfo from "./DestinationInfo"
 import db from "../src/data/db.json"
 
@@ -8,7 +7,7 @@ function DestinationContainer(){
 
     return(
         <div>
-            <DestinationImage tripData={data.destination}/>
+            <h2>My Trips</h2>
             <DestinationInfo tripData={data.destination}/>
         </div>
     )
