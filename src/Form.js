@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import AddATrip from "../src/styles/AddATrip.css"
 function Form(){
     const [formData, setFormData] = useState({
         destinationName: "",
@@ -36,9 +37,9 @@ function Form(){
 
 
     return(
-        <div>
-            <div><h2>Add My Dream Trip</h2></div>
-            <form onSubmit={handleSubmit}>
+        <div style={{textAlign: "center"}}>
+            <form id="addATripForm" onSubmit={handleSubmit}>
+                <h2 id="addATripHeader">Add My Dream Trip</h2>
                 <p>
                     <label htmlFor="destination">Destination's Name:  </label>
                         <input 
