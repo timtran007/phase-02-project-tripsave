@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import AddFundsButton from "./AddFundsButton"
 import db from "../src/data/db.json"
+import DestinationInfo from "../src/styles/DestinationInfo.css"
 
 function DestionationInfo(){
     const [tripData, setTripData] = useState(db.destination)
@@ -18,18 +19,18 @@ function DestionationInfo(){
 
     const infoToDisplay = tripData.map(trip =>{
         return(
-            <div key={trip.id} id={trip.id}>
-                <h3>
+            <div className="card" key={trip.id} id={trip.id}>
+                <h3 className="destination">
                     Destination: {trip.destinationName}
                 </h3>
-                <img src={trip.imgURL} alt={trip.destinationName}/>
-                <h4>
+                <img className="destinationImage" src={trip.imgURL} alt={trip.destinationName}/>
+                <h4 className="budget">
                     Budget: ${trip.budget}
                 </h4>
                 {trip.savings === 0 ? 
-                    `Let's start saving for ${trip.destinationName}!`
+                    <p className="savings">Let's start saving for {trip.destinationName}!</p>
                     :
-                    <h4>
+                    <h4 className="savings">
                         Savings: ${trip.savings}
                     </h4>
                 }

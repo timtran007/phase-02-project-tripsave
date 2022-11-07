@@ -6,14 +6,14 @@ import Form from "./Form";
 function App() {
   return (
     <div>
-      <h1> Welcome to TripSave</h1>
+      <h1 style={{textAlign: "center"}}> Welcome to TripSave</h1>
       <div>
         <Nav />
       </div>
       <Switch>
         <Route exact path="/">
           <header>
-            <h3>Start Planning My Dream Trip</h3>
+            <h3 style={{textAlign: "center"}}>Start Planning My Dream Trip</h3>
           </header>
         </Route>
         <Route path="/destination">
