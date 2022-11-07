@@ -1,10 +1,19 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import AddFundsButton from "./AddFundsButton"
-import db from "../src/data/db.json"
 import DestinationInfo from "../src/styles/DestinationInfo.css"
 
 function DestionationInfo(){
-    const [tripData, setTripData] = useState(db.destination)
+    const [tripData, setTripData] = useState([])
+
+    useEffect(() =>{
+        fetch('http://localhost:3500/destination')
+        .then(resp => resp.json())
+        .then(data =>{
+            setTripData(data)
+        })
+    },[])
+
+    
     
     function onAddFunds(updatedTripData){
         const updatedTripsData = tripData.map(trip => {

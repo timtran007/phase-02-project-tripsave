@@ -1,6 +1,9 @@
 import React, {useState} from "react"
+import {useHistory} from "react-router-dom"
 import AddATrip from "../src/styles/AddATrip.css"
+
 function Form(){
+    const history = useHistory()
     const [formData, setFormData] = useState({
         destinationName: "",
         imgURL: "",
@@ -81,7 +84,7 @@ function Form(){
                         />
                 </p>
                 <p>
-                    <input type="submit" value="Add a Trip"/>
+                    <input onClick={()=> history.push('/destination')}type="submit" value="Add a Trip"/>
                 </p>
             </form>
         </div>
