@@ -30,9 +30,12 @@ function DestionationInfo(){
                 {trip.savings === 0 ? 
                     <p className="savings">Let's start saving for {trip.destinationName}!</p>
                     :
+                    <div>
                     <h4 className="savings">
-                        Savings: ${trip.savings}
+                        Savings:
                     </h4>
+                    <span className="savings">${trip.savings}</span>
+                    </div>
                 }
                     <AddFundsButton trip={trip} onAddFunds={onAddFunds}/>
             </div>

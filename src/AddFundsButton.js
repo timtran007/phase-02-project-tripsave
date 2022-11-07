@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import AddFundButton from "../src/styles/AddFundButton.css"
 
 function AddFundsButton({trip, onAddFunds}){
     const valueOfFundsAdded = [5, 10, 25, 50]
@@ -22,7 +22,7 @@ function AddFundsButton({trip, onAddFunds}){
 
     const buttonsToDisplay = valueOfFundsAdded.map((value, index) =>{
         return(
-            <button onClick={handleClick} key={index} value={value}>
+            <button className="addFundsButton"onClick={handleClick} key={index} value={value}>
                 ${value}
             </button>
         )
@@ -31,7 +31,7 @@ function AddFundsButton({trip, onAddFunds}){
 
     return(
         <div>
-            <h4>Let's Add Some Funds!</h4>
+            <h4 id="addFunds">Add Funds:</h4>
             {buttonsToDisplay}
         </div>
     )
