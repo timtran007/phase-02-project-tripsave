@@ -1,6 +1,6 @@
 # TripSave MVP
 
-TripSave is a React application utilizing a created database of destinations that you could add more destinations to budget and save. In addition, TripSave is using React Router for client-side routing.
+TripSave is a React application utilizing a json-server to run a RESTful API of destinations you want budget and save for while being able to add more destinations. In addition, TripSave is using React Router for client-side routing and performs a PATCH fetch request to update savings amount.
 
 ## TripSave Project Description
 
