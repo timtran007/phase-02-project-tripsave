@@ -9,8 +9,40 @@ Do you have a bucket list destination, but have a hard time saving money for it?
 TripSave is an app that allows users to add their dream destination, create a budget, and add money towards that special trip you’ve been dying to go on.
 
 ## Usage
+Client-Side Routing for a NavBar using NavLink
+```
+        <nav >
+                <NavLink exact className="nav" activeClassName="active" to="/">
+                    Home
+                </NavLink>
+                <NavLink className="nav" to="/destination">
+                    Trips
+                </NavLink> 
+                <NavLink className="nav" to="add-a-trip">
+                    Add a Trip
+                </NavLink>
+        </nav>
 ```
 
+Handle Submitting Controlled Form
+```
+    function handleSubmit(event){
+        event.preventDefault()
+        console.log(formData)
+        fetch('http://localhost:3500/destination',{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData),
+        })
+        setFormData({
+            destinationName: "",
+            imgURL: "",
+            budget: 0,
+            savings: 0,
+        })
+    }
 ```
 
 # Getting Started with TripSave

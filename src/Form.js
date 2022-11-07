@@ -36,8 +36,8 @@ function Form(){
             budget: 0,
             savings: 0,
         })
+        history.push('/destination')
     }
-
 
     return(
         <div style={{textAlign: "center"}}>
@@ -84,7 +84,7 @@ function Form(){
                         />
                 </p>
                 <p>
-                    <input onClick={()=> history.push('/destination')}type="submit" value="Add a Trip"/>
+                    <input type="submit" value="Add a Trip" />
                 </p>
             </form>
         </div>
