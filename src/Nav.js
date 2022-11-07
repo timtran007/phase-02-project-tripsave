@@ -1,25 +1,19 @@
 import React from "react"
-import {NavLink, Route} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 function Nav(){
     return(
-        <div>
-            <div>
-                <NavLink to="/">
+        <nav >
+                <NavLink activeClassName="active" to="/">
                     Home
                 </NavLink>
-            </div>
-            <div>
-                <NavLink to="/destination">
+                <NavLink activeClassName="active" to="/destination">
                     Trips
-                </NavLink>
-            </div>
-            <div>    
-                <NavLink to="add-a-trip">
+                </NavLink> 
+                <NavLink activeClassName="active" to="add-a-trip">
                     Add a Trip
                 </NavLink>
-            </div>
-        </div>
+        </nav>
     )
 }
 
