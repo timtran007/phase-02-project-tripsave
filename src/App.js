@@ -13,7 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <header>
-            <h3 style={{textAlign: "center"}}>Start Planning My Dream Trip</h3>
+            <h3 style={{textAlign: "center", marginTop: 50}}>Start Planning My Dream Trip</h3>
           </header>
         </Route>
         <Route path="/destination">
