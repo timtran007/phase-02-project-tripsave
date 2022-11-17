@@ -6,18 +6,15 @@ import Form from "./Form";
 
 function App() {
   //define state that adds the response from the post request
-  const [tripData, setTripData] = useState([])
+  const [updatedTripData, setUpdatedTripData] = useState([])
 
   useEffect(() =>{
       fetch('http://localhost:3500/destination')
       .then(resp => resp.json())
       .then(data =>{
-        setTripData(data)
         setUpdatedTripData(data)
       })
   },[])
-
-  const [updatedTripData, setUpdatedTripData] = useState([])
 
   function onHandleSubmit(newData){
     debugger

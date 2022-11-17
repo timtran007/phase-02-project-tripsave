@@ -37,6 +37,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
 
 
         setFormData({
+            
             destinationName: "",
             imgURL: "",
             budget: 0,
@@ -55,7 +56,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
                             onChange={handleFormData} 
                             type="text" 
                             name="destinationName"
-                            value={updatedTripData.destinationName}
+                            value={formData.destinationName}
                             placeholder="enter a destination"
                         />
                 </p>
@@ -65,7 +66,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
                             onChange={handleFormData} 
                             type="text" 
                             name="imgURL"
-                            value={updatedTripData.imgURL}
+                            value={formData.imgURL}
                             placeholder="add a image URL link"
                         />
                 </p>
@@ -75,7 +76,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
                             onChange={handleFormData} 
                             type="number"
                             name="budget" 
-                            value={updatedTripData.budget}
+                            value={formData.budget}
                             placeholder="enter a budget"
                         />
                 </p> 
@@ -85,7 +86,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
                             onChange={handleFormData} 
                             type="number" 
                             name="savings"
-                            value={updatedTripData.savings}
+                            value={formData.savings}
                             placeholder="enter savings amount"
                         />
                 </p>
