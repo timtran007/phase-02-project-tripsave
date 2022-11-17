@@ -20,6 +20,13 @@
       "imgURL": "https://www.planetware.com/wpimages/2020/05/best-bucket-list-destinations-santorini-greece.jpg",
       "budget": 4000,
       "savings": 20
+    },
+    {
+      "destinationName": "Hamilton's Pool",
+      "imgURL": "https://s7d2.scene7.com/is/image/TWCNews/austin_sunny_gettyimages-717173753jpg",
+      "budget": "50",
+      "savings": "0",
+      "id": 4
     }
   ]
 }

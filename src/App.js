@@ -17,13 +17,14 @@ function App() {
       })
   },[])
 
-  const [updatedTripData, setUpdatedTripData] = useState(tripData)
+  const [updatedTripData, setUpdatedTripData] = useState([])
 
   function onHandleSubmit(newData){
-    setUpdatedTripData([...tripData, newData])
+    debugger
+    setUpdatedTripData([...updatedTripData, newData])
   }
 
-  console.log(updatedTripData)
+  console.log("App:", updatedTripData)
 
 
   return (

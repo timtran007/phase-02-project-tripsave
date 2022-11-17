@@ -1,19 +1,18 @@
 import React, {useState, useEffect} from "react"
 import AddFundsButton from "./AddFundsButton"
-import DestinationInfo from "../src/styles/DestinationInfo.css"
 
-function DestionationInfo({updatedTripData}){
+function DestionationInfo({updatedTripData, setUpdatedTripData}){
 
-    function onAddFunds(updatedFundsData, setUpdatedTripData){
-        const updatedTripsData = updatedTripData.map(trip => {
-            if(trip.id === updatedFundsData.id){
-                return updatedFundsData
-            } else{
-                return updatedTripData
-            }
-        })
-        setUpdatedTripData(updatedTripsData)
-    }
+    // function onAddFunds(updatedFundsData){
+    //     const updatedTripsData = updatedTripData.map(trip => {
+    //         if(trip.id === updatedFundsData.id){
+    //             return updatedFundsData
+    //         } else{
+    //             return updatedTripData
+    //         }
+    //     })
+    //     // setUpdatedTripData(updatedTripsData)
+    // }
 
     const infoToDisplay = updatedTripData.map(trip =>{
         return(
@@ -35,7 +34,7 @@ function DestionationInfo({updatedTripData}){
                     <span className="savings">${trip.savings}</span>
                     </div>
                 }
-                    <AddFundsButton trip={updatedTripData} onAddFunds={onAddFunds}/>
+                    {/* <AddFundsButton trip={updatedTripData} onAddFunds={onAddFunds}/> */}
             </div>
         )
     })

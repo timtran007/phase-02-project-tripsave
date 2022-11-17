@@ -3,36 +3,40 @@ import {useHistory} from "react-router-dom"
 
 function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
     const history = useHistory()
-    // const [formData, setFormData] = useState({
-    //     destinationName: "",
-    //     imgURL: "",
-    //     budget: 0,
-    //     savings: 0,
-    //   })
+    const [formData, setFormData] = useState({
+        destinationName: "",
+        imgURL: "",
+        budget: 0,
+        savings: 0,
+      })
 
     function handleFormData(event){
-        const key = event.target.id
+        const key = event.target.name
         const value = event.target.value
-        setUpdatedTripData({
-            ...updatedTripData,
+        console.log(formData)
+        setFormData({
+            ...formData,
             [key]: value
         })
     }
 
     function handleSubmit(event){
         event.preventDefault()
-        console.log(updatedTripData)
+        console.log("HandleSubmit: ", formData)
         fetch('http://localhost:3500/destination',{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(updatedTripData),
+            body: JSON.stringify(formData),
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
-        debugger
-        onHandleSubmit({
+        .then(data => {
+            console.log(data)
+            onHandleSubmit(data)})
+
+
+        setFormData({
             destinationName: "",
             imgURL: "",
             budget: 0,
@@ -50,7 +54,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
                         <input 
                             onChange={handleFormData} 
                             type="text" 
-                            id="destinationName"
+                            name="destinationName"
                             value={updatedTripData.destinationName}
                             placeholder="enter a destination"
                         />
@@ -60,7 +64,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
                         <input 
                             onChange={handleFormData} 
                             type="text" 
-                            id="imgURL"
+                            name="imgURL"
                             value={updatedTripData.imgURL}
                             placeholder="add a image URL link"
                         />
@@ -70,7 +74,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
                         <input 
                             onChange={handleFormData} 
                             type="number"
-                            id="budget" 
+                            name="budget" 
                             value={updatedTripData.budget}
                             placeholder="enter a budget"
                         />
@@ -80,7 +84,7 @@ function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
                         <input 
                             onChange={handleFormData} 
                             type="number" 
-                            id="savings"
+                            name="savings"
                             value={updatedTripData.savings}
                             placeholder="enter savings amount"
                         />
