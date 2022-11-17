@@ -1,9 +1,31 @@
+import React, {useState, useEffect} from "react"
 import {Route,Switch} from "react-router-dom"
 import Nav from "./Nav"
 import DestinationContainer from "./DestinationContainer";
 import Form from "./Form";
 
 function App() {
+  //define state that adds the response from the post request
+  const [tripData, setTripData] = useState([])
+
+  useEffect(() =>{
+      fetch('http://localhost:3500/destination')
+      .then(resp => resp.json())
+      .then(data =>{
+        setTripData(data)
+        setUpdatedTripData(data)
+      })
+  },[])
+
+  const [updatedTripData, setUpdatedTripData] = useState(tripData)
+
+  function onHandleSubmit(newData){
+    setUpdatedTripData([...tripData, newData])
+  }
+
+  console.log(updatedTripData)
+
+
   return (
     <div>
       <h1 style={{textAlign: "center"}}> Welcome to TripSave</h1>
@@ -17,10 +39,10 @@ function App() {
           </header>
         </Route>
         <Route path="/destination">
-          <DestinationContainer />
+          <DestinationContainer updatedTripData={updatedTripData} setUpdatedTripData={setUpdatedTripData}/>
         </Route>
         <Route path="/add-a-trip">
-          <Form />
+          <Form updatedTripData={updatedTripData} onHandleSubmit={onHandleSubmit} setUpdatedTripData={setUpdatedTripData}/>
         </Route>
       </Switch>
     </div>
