@@ -4,7 +4,7 @@ function AddFundsButton({trip, onAddFunds}){
     const valueOfFundsAdded = [5, 10, 25, 50]
     
     function handleClick(event){
-        const eventId = event.target.parentElement.parentElement.id
+        const eventId = event.target.id
         if(trip.id === parseInt(eventId)){
             fetch(`http://localhost:3500/destination/${trip.id}`,{
                 method: 'PATCH',
@@ -16,13 +16,13 @@ function AddFundsButton({trip, onAddFunds}){
                 })
             })
             .then(resp => resp.json())
-            .then(updatedTripData => onAddFunds(updatedTripData)) 
+            .then(updatedTrip => onAddFunds(updatedTrip)) 
         }
     }
 
     const buttonsToDisplay = valueOfFundsAdded.map((value, index) =>{
         return(
-            <button className="addFundsButton"onClick={handleClick} key={index} value={value}>
+            <button className="addFundsButton" onClick={handleClick} key={index} value={value} id={trip.id}>
                 ${value}
             </button>
         )
