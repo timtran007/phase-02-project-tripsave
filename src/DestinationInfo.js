@@ -1,6 +1,3 @@
-import React, {useState, useEffect} from "react"
-
-
 function DestionationInfo({trip}){
     return(
         <div className="card" key={trip.id} id={trip.id}>

@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import {useHistory} from "react-router-dom"
 
-function Form({updatedTripData, onHandleSubmit, setUpdatedTripData}){
+function Form({ onHandleSubmit }){
     const history = useHistory()
     const [formData, setFormData] = useState({
         destinationName: "",
