@@ -6,7 +6,7 @@ import Form from "./Form";
 
 function App() {
   //define state that adds the response from the post request
-  const [trip, setUpdatedTripData] = useState([])
+  const [trips, setUpdatedTripData] = useState([])
 
   useEffect(() =>{
       fetch('http://localhost:3500/destination')
@@ -17,7 +17,7 @@ function App() {
   },[])
 
   function onHandleSubmit(newData){
-    setUpdatedTripData([...trip, newData])
+    setUpdatedTripData([...trips, newData])
   }
 
 
@@ -34,10 +34,10 @@ function App() {
           </header>
         </Route>
         <Route path="/destination">
-          <DestinationContainer updatedTripData={trip} setUpdatedTripData={setUpdatedTripData}/>
+          <DestinationContainer updatedTripData={trips} setUpdatedTripData={setUpdatedTripData}/>
         </Route>
         <Route path="/add-a-trip">
-          <Form updatedTripData={trip} onHandleSubmit={onHandleSubmit} setUpdatedTripData={setUpdatedTripData}/>
+          <Form onHandleSubmit={onHandleSubmit}/>
         </Route>
       </Switch>
     </div>
