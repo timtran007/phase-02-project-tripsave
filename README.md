@@ -68,9 +68,10 @@ You may also see any lint errors in the console.
 
 ### `json-server -p 3500 --watch ./src/data/db.json`
 
+(Keep in mind you would have to run nvm use v16.17)
+
 Runs the server.\
 Open [http://localhost:3500/destination](http://localhost:3500/destination) to view the server in your browser.
-
 
 ## Learn More
 
